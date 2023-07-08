@@ -1,0 +1,284 @@
+<template>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+      <path d="M7.996 0A7.998 7.998 0 0 0 0 8a8 8 0 0 0 6.93 7.93v-1.613a1.06 1.06 0 0 0-.717-1.008A5.602 5.602 0 0 1 2.4 7.865 5.579 5.579 0 0 1 8.054 2.4a5.599 5.599 0 0 1 5.535 5.81l-.002.046a6.116 6.116 0 0 1-.012.192l-.005.061a4.85 4.85 0 0 1-.033.284l-.01.068c-.685 4.516-6.564 7.054-6.596 7.068A7.998 7.998 0 0 0 15.992 8 7.998 7.998 0 0 0 7.996.001Z"/>
+    
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+  <nav class="navbar navbar-expand-lg" style="background-color: #cc6600;">
+  <div class="container-fluid">
+    <router-link class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" to="/">&ensp;&ensp;&ensp;<img src="logo.png" alt="Logo" width="170" height="35" class="d-inline-block align-text-top"></router-link>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+ 
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" target="_blank" href="https://wow.jungto.org:28319/auth/login">정토회와우시스템</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" target="_blank" href="https://my.jungto.org/#/login">마이정토</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" target="_blank" href="https://drive.google.com/drive/u/0/folders/1a2vbcFVBsBoP1Nv2hTpFtHGxvEutg-vx">인천지회자료실</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link text-white" target="_blank" href="https://sites.google.com/jungto.org/on-library">온라인실무도서관</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" target="_blank" href="https://www.docswave.com/ko">DocsWave</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" target="_blank" href="https://sites.google.com/jungto.org/hongbo2021/home">홍보자료실</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" target="_blank" href="https://sites.google.com/jungto.org/5678/%ED%99%88">회의지원팀</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            실천활동사이트
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" target="_blank" href="https://sites.google.com/jungto.org/action/%ED%99%88">실천활동사이트</a></li>
+            <li><a class="dropdown-item" target="_blank" href="https://sites.google.com/jungto.org/booking/%ED%99%88?authuser=2">정토사회문화회관</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
+      <div class="position-sticky pt-3 sidebar-sticky">
+        <ul class="nav flex-column">
+          
+          <li class="nav-item">
+            
+            <router-link class="nav-link active text-secondary" aria-current="page" to="/members">
+              
+              <span data-feather="home" class="align-text-bottom"></span>
+            
+              <i class="bi bi-back"></i>&nbsp;모둠편성
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-secondary" to="/buddhistceremony">
+              <span data-feather="file" class="align-text-bottom"></span>
+              <i class="bi bi-alarm"></i>&nbsp;법회
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-secondary" to="/prayerunification">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              <i class="bi bi-archive"></i>&nbsp;통일기도
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-secondary" to="/meditation">
+              <span data-feather="users" class="align-text-bottom"></span>
+              <i class="bi bi-app-indicator"></i>&nbsp;일요명상
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-secondary" to="/jointprayer">
+              <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+              <i class="bi bi-arrow-through-heart"></i>&nbsp;공동정진
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-secondary" to="/donation">
+              <span data-feather="layers" class="align-text-bottom"></span>
+              <i class="bi bi-aspect-ratio"></i>&nbsp;보시안내
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-secondary" to="/meeting">
+              <span data-feather="layers" class="align-text-bottom"></span>
+              <i class="bi bi-award"></i>&nbsp;모둠장회의
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-secondary" to="/prayerceremony">
+              <span data-feather="layers" class="align-text-bottom"></span>
+              <i class="bi bi-bag-plus"></i>&nbsp;천결정진행사
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-secondary" to="/righteousarmy">
+              <span data-feather="layers" class="align-text-bottom"></span>
+              <i class="bi bi-bank2"></i>&nbsp;통일의병월별활동
+            </router-link>
+          </li>
+        
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase text-primary">
+          <span>비공통사항</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle" class="align-text-bottom"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <router-link class="nav-link text-secondary" to="/practice">
+              <span data-feather="file-text" class="align-text-bottom"></span>
+              <i class="bi bi-balloon"></i>&nbsp;실천활동회의
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-secondary" to="/wow">
+              <span data-feather="file-text" class="align-text-bottom"></span>
+              <i class="bi bi-bag-plus"></i>&nbsp;실천활동와우등록 <span style="color:red">NEW</span>
+            </router-link>
+          </li>
+            <li class="nav-item">
+            <router-link class="nav-link text-secondary" to="/newmember">
+              <span data-feather="file-text" class="align-text-bottom"></span>
+              <i class="bi bi-app-indicator"></i>&nbsp;신규회원교육
+            </router-link>
+          </li>
+        </ul>
+        <br><br><br><br><br><br>
+      </div>
+    </nav>
+    <router-view/>
+  </div>
+</div>
+
+</body>
+
+</template>
+
+<script>
+
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+ .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+    
+</style>
+
